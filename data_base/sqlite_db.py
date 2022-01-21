@@ -31,7 +31,7 @@ async def sql_read(message):
         await message.answer(f'Ваш середній розход: {ret[2]}\nЦіна топлива: {ret[3]}', reply_markup=inline_middle)
 
 
-async def sql_give_cost_and_middle(message):
+async def sql_give_middle_and_cost(message):
     for ret in cur.execute(f'SELECT * FROM user_info WHERE user_id={message.from_user.id}').fetchall():
         list_value = [ret[2], ret[3]]
-        return list_value
+    return list_value
