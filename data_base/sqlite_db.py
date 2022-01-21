@@ -1,7 +1,5 @@
 import sqlite3 as sq
 
-from keyboards.inline import inline_middle
-
 
 def sql_start():
     global base, cur
@@ -28,10 +26,7 @@ async def sql_edit(list_values):
 
 async def sql_read(message):
     for ret in cur.execute(f'SELECT * FROM user_info WHERE user_id={message.from_user.id}').fetchall():
-        await message.answer(f'Ваш середній розход: {ret[2]}\nЦіна топлива: {ret[3]}', reply_markup=inline_middle)
-
-
-async def sql_give_middle_and_cost(message):
-    for ret in cur.execute(f'SELECT * FROM user_info WHERE user_id={message.from_user.id}').fetchall():
-        list_value = [ret[2], ret[3]]
+        list_value = [ret[0], ret[1], ret[2], ret[3]]
     return list_value
+
+
