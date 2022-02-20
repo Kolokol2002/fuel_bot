@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import asyncio
 
 from aiogram import types, Dispatcher

@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 
@@ -24,7 +27,6 @@ async def km_grn_fuel(message: types.Message):
     elif message.text == '✅Літрів':
         await message.answer('Напишіть скільки літрів розрахувати:')
         await For_km_rgn_fuel.fuel.set()
-
 
 @dp.message_handler(state=For_km_rgn_fuel.km)
 async def km(message: types.Message, state: FSMContext):

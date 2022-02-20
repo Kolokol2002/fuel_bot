@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 
