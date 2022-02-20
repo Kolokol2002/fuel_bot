@@ -4,6 +4,7 @@ btn = [
     KeyboardButton('✅Км'),
     KeyboardButton('✅Грн'),
     KeyboardButton('✅Літрів'),
+    KeyboardButton('✅Ціна топлива'),
     KeyboardButton('Разход', ),
 ]
 
