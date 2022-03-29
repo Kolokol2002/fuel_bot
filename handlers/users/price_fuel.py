@@ -2,18 +2,14 @@
 # -*- coding: utf-8 -*-
 
 from aiogram import types
-from aiogram.dispatcher import FSMContext
 
-from data_base import sqlite_db
-from keyboards.inline import inline_back, inline_middle
+from keyboards.inline import inline_back
 from loader import dp
 from aiogram.dispatcher.filters import Text
+
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
-from keyboards.default import def_kb
-
-from states import For_Set_middle_cost
 
 @dp.message_handler(Text(equals='Ціна топлива', ignore_case=True))
 async def price_fuel(message: types.Message):
