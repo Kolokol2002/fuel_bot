@@ -22,7 +22,7 @@ async def price_fuel(message: types.Message):
 
 
     driver = webdriver.Chrome(
-        executable_path="chromedriver.exe",
+        executable_path="chromedriver_linux",
         options=options
     )
     driver.get(url)
