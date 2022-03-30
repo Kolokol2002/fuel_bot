@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import time
 
-import requests
 from aiogram import types
 
 from keyboards.inline import inline_back
