@@ -14,7 +14,7 @@ from keyboards.default import def_kb
 from states import For_Set_middle_cost
 
 
-@dp.message_handler(Text(equals='Разход', ignore_case=True))
+@dp.message_handler(Text(equals='⚙Разход', ignore_case=True))
 async def middle(message: types.Message):
 
     list_value = await sqlite_db.sql_read(message)

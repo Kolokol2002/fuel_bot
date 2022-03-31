@@ -8,7 +8,7 @@ from keyboards.inline import inline_back
 from loader import dp
 
 
-@dp.message_handler(Text(equals='Ціна топлива', ignore_case=True))
+@dp.message_handler(Text(equals='⛽Ціна топлива', ignore_case=True))
 async def price_fuel(message: types.Message):
     try:
         import requests

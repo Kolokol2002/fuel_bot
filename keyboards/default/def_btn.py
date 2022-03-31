@@ -8,7 +8,7 @@ btn = [
     KeyboardButton('✅Грн'),
     KeyboardButton('✅Літрів'),
     KeyboardButton('⚙Разход', ),
-    KeyboardButton('Ціна топлива', ),
+    KeyboardButton('⛽Ціна топлива', ),
 ]
 
 def_kb = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True,)
