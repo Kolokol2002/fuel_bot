@@ -34,7 +34,8 @@ async def km(message: types.Message, state: FSMContext):
         list_cost_middle = await sqlite_db.sql_read(message)
         medium_fuel = float(list_cost_middle[2])
         cost_fuel = float(list_cost_middle[3])
-        fuel_res = round((medium_fuel * int(message.text)) / 100, 1)
+
+        fuel_res = round((medium_fuel * (eval(message.text))) / 100, 1)
         rgn_res = round(fuel_res * cost_fuel, 1)
         await message.reply(f'Грн: {rgn_res}\nТоплива: {fuel_res}', reply_markup=inline_back)
 
@@ -49,7 +50,7 @@ async def grn(message: types.Message, state: FSMContext):
         list_cost_middle = await sqlite_db.sql_read(message)
         medium_fuel = float(list_cost_middle[2])
         cost_fuel = float(list_cost_middle[3])
-        fuel_res = round(float(message.text) / cost_fuel, 1)
+        fuel_res = round((eval(message.text)) / cost_fuel, 1)
         km_res = round((fuel_res * 100) / medium_fuel, 1)
         await message.reply(f'Км: {km_res}\nЛітрів: {fuel_res}', reply_markup=inline_back)
 
@@ -62,8 +63,8 @@ async def fuel(message: types.Message, state: FSMContext):
         list_cost_middle = await sqlite_db.sql_read(message)
         medium_fuel = float(list_cost_middle[2])
         cost_fuel = float(list_cost_middle[3])
-        rgn_res = round(float(message.text) * cost_fuel, 1)
-        km_res = round((float(message.text) * 100) / medium_fuel, 1)
+        rgn_res = round((eval(message.text)) * cost_fuel, 1)
+        km_res = round(((eval(message.text)) * 100) / medium_fuel, 1)
         await message.reply(f'Км: {km_res}\nГрн: {rgn_res}', reply_markup=inline_back)
 
     except:

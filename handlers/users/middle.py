@@ -35,7 +35,7 @@ async def keyboard_cost(call: types.CallbackQuery, state: FSMContext):
 async def cost_fuel(message: types.Message, state: FSMContext):
     try:
         list_values = await sqlite_db.sql_read(message)
-        answer_middle_fuel = float(message.text)
+        answer_middle_fuel = eval(message.text)
         answer_cost_fuel = list_values[3]
 
         state_list = [message.from_user.full_name, message.from_user.id, answer_middle_fuel, answer_cost_fuel]
@@ -55,7 +55,7 @@ async def middle_fuel(message: types.Message, state: FSMContext):
     try:
         list_values = await sqlite_db.sql_read(message)
         answer_middle_fuel = list_values[2]
-        answer_cost_fuel = message.text
+        answer_cost_fuel = eval(message.text)
 
         state_list = [message.from_user.full_name, message.from_user.id, answer_middle_fuel, answer_cost_fuel]
 
